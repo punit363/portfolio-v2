@@ -11,6 +11,30 @@ const navigation = [
   { id: "about", label: "About me" },
 ];
 
+const socialLinks = [
+  {
+    id: "x",
+    index: "01",
+    label: "X",
+    handle: "@punit363",
+    href: "https://x.com/punit363",
+  },
+  {
+    id: "linkedin",
+    index: "02",
+    label: "LinkedIn",
+    handle: "in/punit363",
+    href: "https://www.linkedin.com/in/punit363",
+  },
+  {
+    id: "github",
+    index: "03",
+    label: "GitHub",
+    handle: "punit363",
+    href: "https://github.com/punit363",
+  },
+];
+
 const experience = [
   {
     id: "nomura",
@@ -572,6 +596,50 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ol>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section
+          className="portfolio-panel connect-panel"
+          id="connect"
+          aria-labelledby="connect-title"
+        >
+          <div className="panel-frame" aria-hidden="true" />
+          <span className="panel-count">05 / 05 Connect</span>
+          <span className="panel-corner">K4</span>
+          <h2 className="connect-heading" id="connect-title">
+            lesS talK.
+            <br />
+            morE claritY.
+          </h2>
+          <div className="connect-aside" aria-hidden="true">
+            <span>open</span>
+            <span>linE</span>
+          </div>
+          <p className="connect-prompt">
+            Pick a channel.
+            <br />
+            I read every message.
+          </p>
+          <ol className="connect-links" aria-label="Social profiles">
+            {socialLinks.map(({ id, index, label, handle, href }, position) => (
+              <li key={id}>
+                <a
+                  className={`connect-link${position === 0 ? " connect-link-default" : ""}`}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Visit Punit Pawar on ${label}. Opens in a new tab.`}
+                >
+                  <span className="connect-index">{index}</span>
+                  <span className="connect-name">{label}</span>
+                  <span className="connect-handle">{handle}</span>
+                  <span className="connect-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
               </li>
             ))}
           </ol>
